@@ -29,8 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 			.antMatchers("/index").access("hasRole('sales') or hasRole('warehouse')")
-			.antMatchers("/warehouse").hasRole("warehouse")
-			.antMatchers("/sales").hasRole("sales")
+			.antMatchers("/part/**").hasRole("warehouse")
+			.antMatchers("/article/**","/action/**","/offers").hasRole("sales")
 			.antMatchers("/**").hasRole("admin")
 			.and().formLogin()
             .defaultSuccessUrl("/index", true);

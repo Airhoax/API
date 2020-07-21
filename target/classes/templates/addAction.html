@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="#" th:action="@{/action/save}" th:object="${action}" method="post">
+ID:<input type="text" th:field="*{ID}">
+Start date:<input type="text" th:field="*{pstart}">
+End date:<input type="text" th:field="*{pend}">  
+Discount percentage:<input type="text" th:field="*{discount}">        
+<button type="submit">Add</button>
+</form>
+</html>

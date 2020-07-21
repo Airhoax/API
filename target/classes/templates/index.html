@@ -1,19 +1,25 @@
 <html>
-   <head>
-      <meta charset = "ISO-8859-1" />
-      <link href = "css/styles.css" rel = "stylesheet"/>
-      <title>Spring Boot Application</title>
-   </head>
+
    <body>
 		<div>
- 			 <form action="#" th:action="@{/warehouse}">
-        <input type="submit" value="warehouse"/>
-    </form>
+ 			 <form action="#" th:action="@{/part}">
+       			 <input type="submit" value="warehouse"/>
+   			 </form>
 		</div>
 		<div>
- 			 <form action="#" th:action="@{/sales}">
-        <input type="submit" value="sales"/>
-    </form>
+ 			 <form action="#" th:action="@{/article}">
+       			 <input type="submit" value="article"/>
+   			 </form>
+		</div>
+		<div>
+ 			 <form action="#" th:action="@{/action}">
+       			 <input type="submit" value="actions"/>
+   			 </form>
+		</div>
+		<div>
+ 			 <form action="#" th:action="@{/offers}">
+       			 <input type="submit" value="offers"/>
+   			 </form>
 		</div>
    </body>
 </html>

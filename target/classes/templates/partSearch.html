@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="#" th:action="@{/part}">
+<input type="submit" value="Go back"/>
+</form>
+</div>
+<tr th:each="part : ${parts.?[pvisible==1]}">
+<div>
+|ID:<td th:text="${part.ID}"></td>
+|Brand:<td th:text="${part.brand}"></td>
+|Car:<td th:text="${part.car}"></td>
+|Date:<td th:text="${part.pdate}"></td>
+|
+</div>
+</html>

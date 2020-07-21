@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="#" th:action="@{/part/save}" th:object="${part}" method="post">
+ID:<input type="text" th:field="*{ID}">
+brand:<input type="text" th:field="*{brand}">
+car:<input type="text" th:field="*{car}">  
+date:<input type="text" th:field="*{pdate}">  
+<input type="hidden" th:field="*{paction}" value="0">
+<input type="hidden" th:field="*{pvalue}" value="0">
+<input type="hidden" th:field="*{pvisible}" value="0">
+<input type="hidden" th:field="*{discount}" value="0">        
+<button type="submit">Add</button>
+</form>
+</html>

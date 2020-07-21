@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div>
+Add article:
+</div>
+<div>
+<input type="text" id="ID" placeholder="ID">
+<input type="text" id="pvalue" placeholder="value">
+<input type="submit" value="Add" onclick="location.href='article/add/' + document.getElementById('ID').value +'/'+document.getElementById('pvalue').value"/>
+</div>
+<div>
+Remove article:
+</div>
+<div>
+<input type="text" id="IDD" placeholder="ID">
+<input type="submit" value="Remove" onclick="location.href='article/delete/' + document.getElementById('IDD').value"/>
+</div>
+<div>
+Edit article:
+</div>
+<div>
+<input type="text" id="ID" placeholder="ID">
+<input type="text" id="pvalue" placeholder="value">
+<input type="submit" value="Edit" onclick="location.href='article/edit/' + document.getElementById('ID').value +'/'+document.getElementById('pvalue').value"/>
+</div>
+<tr th:each="part : ${parts.?[pvalue>0]}">
+<div>
+|ID:<td th:text="${part.ID}"></td>
+|Value:<td th:text="${part.pvalue}"></td>
+|
+</div>
+</tr>
+<form action="#" th:action="@{/index}">
+       			 <input type="submit" value="Back to home"/>
+   			 </form>
+</html>

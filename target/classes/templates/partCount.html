@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
+<body onload="show()"> 
+<div id="show">
+</div>
+<script th:inline="javascript">
+/*<![CDATA[*/
+function show(){
+		var originalList =/*[[${parts}]]*/ [];
+		var finalList = [];
+		for (i=0;i<originalList.length;i++){
+		var list=0;
+      	var name=originalList[i].brand+" "+originalList[i].car;
+      	var old = 0;
+		for (j=0;j<i;j++){
+		if(originalList[i].brand == originalList[j].brand && originalList[i].car==originalList[j].car){
+		old=1;
+		}
+		}
+		if(old==0){
+		for(j=i;j<originalList.length;j++){
+		if(originalList[i].brand == originalList[j].brand && originalList[i].car==originalList[j].car){
+		list+=1;
+		}
+		}
+		var element = {Brand_and_car:name,count:list};
+		finalList.push(element);}
+		}
+      document.getElementById("show").innerHTML=`${JSON. stringify(finalList)}`; 
+      }
+/*]]>*/
+</script>
+<form action="#" th:action="@{/index}">
+       			 <input type="submit" value="Back to home"/>
+   			 </form>
+</body> 
+</html>

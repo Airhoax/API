@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="#" th:action="@{/action/add}">
+<input type="submit" value="Add action"/>
+</form>
+<div>
+Remove action:
+</div>
+<div>
+<input type="text" id="IDD" placeholder="ID">
+<input type="submit" value="Remove" onclick="location.href='action/delete/' + document.getElementById('IDD').value"/>
+</div>
+
+<tr th:each="vaction : ${vactions}">
+<div>
+|ID:<td th:text="${vaction.ID}"></td>
+|Start date:<td th:text="${vaction.pstart}"></td>
+|End date:<td th:text="${vaction.pend}"></td>
+|Discount percentage:<td th:text="${vaction.discount}"></td>%
+|
+</div>
+</tr>
+<div>
+Add part to action:
+</div>
+<div>
+<input type="text" id="IDPTA" placeholder="Part ID">
+<input type="text" id="IDA" placeholder="Action ID">
+<input type="submit" value="Add" onclick="location.href='action/part/add/'+ document.getElementById('IDA').value+'/' + document.getElementById('IDPTA').value"/>
+</div>
+<div>
+Remove part from action:
+</div>
+<div>
+<input type="text" id="ID" placeholder="ID">
+<input type="text" id="IDAD" placeholder="Action ID">
+<input type="submit" value="Remove" onclick="location.href='action/part/delete/'+ document.getElementById('IDAD').value+'/' + document.getElementById('ID').value"/>
+</div>
+<div>
+List of parts in actions:
+<tr th:each="part : ${parts.?[paction>0]}">
+<div>
+|Part ID:<td th:text="${part.ID}"></td>
+|Action ID:<td th:text="${part.paction}"></td>
+|
+</div>
+</tr>
+</div>
+<form action="#" th:action="@{/index}">
+       			 <input type="submit" value="Back to home"/>
+   			 </form>
+</html>

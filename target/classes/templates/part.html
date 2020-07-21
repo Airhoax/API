@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<form action="#" th:action="@{/part/add}">
+<input type="submit" value="Add part"/>
+</form>
+<div>
+Remove part:
+</div>
+<div>
+<input type="text" id="IDD" placeholder="ID">
+<input type="submit" value="Remove" onclick="location.href='part/delete/' + document.getElementById('IDD').value"/>
+</div>
+<div>
+Search by ID:
+</div>
+<div>
+<input type="text" id="ID" placeholder="ID">
+<input type="submit" value="Search" onclick="location.href='part/search/1/' + document.getElementById('ID').value+'/0'"/>
+</div>
+<div>
+Search by Date:
+</div>
+<div>
+<input type="text" id="Date" placeholder="Date">
+<input type="submit" value="Search" onclick="location.href='part/search/2/' + document.getElementById('Date').value+'/0'"/>
+</div>
+<div>
+Search by ID:
+</div>
+<div>
+<input type="text" id="Brand" placeholder="Brand">
+<input type="text" id="Car" placeholder="Car">
+<input type="submit" value="Search" onclick="location.href='part/search/3/' + document.getElementById('Brand').value+'/'+ document.getElementById('Car').value"/>
+</div>
+<div>
+ 			 <form action="#" th:action="@{/part/count}">
+       			 <input type="submit" value="Part Count"/>
+   			 </form>
+		</div>
+<tr th:each="part : ${parts}">
+<div>
+|ID:<td th:text="${part.ID}"></td>
+|Brand:<td th:text="${part.brand}"></td>
+|Car:<td th:text="${part.car}"></td>
+|Date:<td th:text="${part.pdate}"></td>
+|
+</div>
+</tr>
+<form action="#" th:action="@{/index}">
+       			 <input type="submit" value="Back to home"/>
+   			 </form>
+</html>
